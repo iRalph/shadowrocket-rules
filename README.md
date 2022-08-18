@@ -8,6 +8,18 @@ REJECT: [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/re
 
 PROXY: [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt](https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt)
 
+## Example
+
+```
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/reject.txt,REJECT
+RULE-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/direct-name.txt,DIRECT
+RULE-SET,https://gita.cool/carrnot/shadowrocket-rules/release/direct-ip.txt,DIRECT,no-resolve
+# Add this rule to save a DNS lookup
+RULE-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt,PROXY
+FINAL,PROXY
+```
+
 ## Credits
 
 * [https://github.com/carrnot/china-ip-list](https://github.com/carrnot/china-ip-list)
