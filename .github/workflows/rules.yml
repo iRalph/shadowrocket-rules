@@ -36,6 +36,10 @@ jobs:
       - name: build china domain list
         run: |
           curl -L https://raw.githubusercontent.com/carrnot/china-domain-list/release/domain.txt | sed 's/^/DOMAIN\-SUFFIX\,/' > publish/direct-name.txt
+          
+      - name: build ads list
+        run: |
+          curl -L https://raw.githubusercontent.com/carrnot/dnscrypt-proxy-ads/release/blocked-names.txt | sed '/^$/d'| sed '/^#/d' | sed 's/^/DOMAIN-SUFFIX,&/g' > publish/reject.txt
 
       - name: Git push assets to "release" branch
         run: |
