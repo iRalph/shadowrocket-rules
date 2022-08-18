@@ -32,6 +32,10 @@ jobs:
       - name: build china ip list
         run: |
            curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/release/ip.txt | sed 's/^/IP\-CIDR\,/' > publish/direct-ip.txt
+           
+      - name: build china domain list
+        run: |
+          curl -L https://raw.githubusercontent.com/carrnot/china-domain-list/release/domain.txt | sed 's/^/DOMAIN\-SUFFIX\,/' > publish/direct-name.txt
 
       - name: Git push assets to "release" branch
         run: |
