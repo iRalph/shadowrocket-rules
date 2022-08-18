@@ -28,6 +28,10 @@ jobs:
           curl -L 'https://raw.githubusercontent.com/v2fly/domain-list-community/release/geolocation-!cn.txt' | sed '/[@ads@cn]$/d' | sed '/^regexp/d' > $proxy
           sed -i 's/domain\:/DOMAIN\-SUFFIX,/' $proxy
           sed -i 's/full\:/DOMAIN,/' $proxy
+          
+      - name: build china ip list
+        run: |
+           curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/release/ip.txt | sed 's/^/IP\-CIDR\,/' > publish/direct-ip.txt
 
       - name: Git push assets to "release" branch
         run: |
