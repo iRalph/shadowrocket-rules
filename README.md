@@ -8,15 +8,21 @@ REJECT: [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/re
 
 PROXY: [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt](https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt)
 
+MMDB(CN): [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/Country.mmdb](https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/Country.mmdb)
+
 ## Example
 
 ```
 [Rule]
 RULE-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/reject.txt,REJECT
 RULE-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/direct-name.txt,DIRECT
+
 RULE-SET,https://gita.cool/carrnot/shadowrocket-rules/release/direct-ip.txt,DIRECT,no-resolve
+# GEOIP,CN,DIRECT
+
 # Add this rule to save a DNS lookup
 RULE-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt,PROXY
+
 FINAL,PROXY
 ```
 
