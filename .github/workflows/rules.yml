@@ -40,6 +40,13 @@ jobs:
       - name: build ads list
         run: |
           curl -L https://raw.githubusercontent.com/carrnot/dnscrypt-proxy-ads/release/blocked-names.txt | sed '/^$/d'| sed '/^#/d' | sed 's/^/DOMAIN-SUFFIX,&/g' > publish/reject.txt
+          
+      - name: build mmdb ip
+        run: |
+          wget https://github.com/carrnot/mmdb-go/releases/download/1.0/mmdb-go-linux64.tar.gz
+          tar -xzvf mmdb-go-linux64.tar.gz
+          curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/release/ip.txt -o ip.txt
+          ./mmdb-go -i ip.txt -o publish/Country.mmdb
 
       - name: Git push assets to "release" branch
         run: |
