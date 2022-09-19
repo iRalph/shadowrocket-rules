@@ -26,8 +26,8 @@ jobs:
         run: |
           export proxy=publish/proxy.txt
           curl -L 'https://raw.githubusercontent.com/v2fly/domain-list-community/release/geolocation-!cn.txt' | sed '/[@ads@cn]$/d' | sed '/^regexp/d' > $proxy
-          sed -i 's/domain\:/DOMAIN\-SUFFIX,/' $proxy
-          sed -i 's/full\:/DOMAIN,/' $proxy
+          sed -i 's/domain\:/./' $proxy
+          sed -i 's/full\://' $proxy
           
       - name: build china ip list
         run: |
@@ -35,11 +35,11 @@ jobs:
            
       - name: build china domain list
         run: |
-          curl -L https://raw.githubusercontent.com/carrnot/china-domain-list/release/domain.txt | sed 's/^/DOMAIN\-SUFFIX\,/' > publish/direct-name.txt
+          curl -L https://raw.githubusercontent.com/carrnot/china-domain-list/release/domain.txt | sed 's/^/\./' > publish/direct-name.txt
           
       - name: build ads list
         run: |
-          curl -L https://raw.githubusercontent.com/carrnot/dnscrypt-proxy-ads/release/blocked-names.txt | sed '/^$/d'| sed '/^#/d' | sed 's/^/DOMAIN-SUFFIX,&/g' > publish/reject.txt
+          curl -L https://raw.githubusercontent.com/carrnot/dnscrypt-proxy-ads/release/blocked-names.txt | sed '/^$/d'| sed '/^#/d' | sed 's/^/\.&/g' > publish/reject.txt
           
       - name: build mmdb ip
         run: |
