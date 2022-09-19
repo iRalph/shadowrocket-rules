@@ -39,7 +39,7 @@ jobs:
           
       - name: build ads list
         run: |
-          curl -L https://raw.githubusercontent.com/carrnot/dnscrypt-proxy-ads/release/blocked-names.txt | sed '/^$/d'| sed '/^#/d' | sed 's/^/\.&/g' > publish/reject.txt
+          curl -L https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt | sed '/^$/d'| sed '/^#/d' | sed 's/^/\.&/g' > publish/reject.txt
           
       - name: build mmdb ip
         run: |

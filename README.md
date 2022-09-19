@@ -17,8 +17,8 @@ MMDB(CN): [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/
 DOMAIN-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/reject.txt,REJECT
 DOMAIN-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/direct-name.txt,DIRECT
 
-RULE-SET,https://gita.cool/carrnot/shadowrocket-rules/release/direct-ip.txt,DIRECT,no-resolve
-# GEOIP,CN,DIRECT
+GEOIP,CN,DIRECT
+# RULE-SET,https://gita.cool/carrnot/shadowrocket-rules/release/direct-ip.txt,DIRECT,no-resolve
 
 # Add this rule to save a DNS lookup
 DOMAIN-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt,PROXY
@@ -30,5 +30,5 @@ FINAL,PROXY
 
 * [https://github.com/carrnot/china-ip-list](https://github.com/carrnot/china-ip-list)
 * [https://github.com/carrnot/china-domain-list](https://github.com/carrnot/china-domain-list)
-* [https://github.com/carrnot/dnscrypt-proxy-ads](https://github.com/carrnot/dnscrypt-proxy-ads)
+* [https://github.com/bigdargon/hostsVN](https://github.com/bigdargon/hostsVN)
 * [https://github.com/v2fly/domain-list-community](https://github.com/v2fly/domain-list-community/tree/release)
