@@ -25,9 +25,10 @@ jobs:
       - name: build no-cn list
         run: |
           export proxy=publish/proxy.txt
-          curl -L 'https://raw.githubusercontent.com/v2fly/domain-list-community/release/geolocation-!cn.txt' | sed '/[@ads@cn]$/d' | sed '/^regexp/d' > $proxy
-          sed -i 's/domain\:/./' $proxy
-          sed -i 's/full\://' $proxy
+          curl -L 'https://raw.githubusercontent.com/v2fly/domain-list-community/release/geolocation-!cn.txt' | sed '/[@ads@cn]$/d' > $proxy
+          sed -i 's/domain\:/DOMAIN\-SUFFIX,/' $proxy
+          sed -i 's/full\:/DOMAIN,/' $proxy
+          sed -i 's/regexp\:/URL\-REGEX,/' $proxy
           
       - name: build china ip list
         run: |
