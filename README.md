@@ -21,7 +21,7 @@ GEOIP,CN,DIRECT
 # RULE-SET,https://gita.cool/carrnot/shadowrocket-rules/release/direct-ip.txt,DIRECT
 
 # Add this rule to save a DNS lookup
-DOMAIN-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt,PROXY
+RULE-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt,PROXY
 
 FINAL,PROXY
 ```
