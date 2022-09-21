@@ -14,11 +14,11 @@ MMDB(CN): [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/
 
 ```
 [Rule]
-DOMAIN-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/reject.txt,REJECT
+RULE-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/reject.txt,REJECT
 DOMAIN-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/direct-name.txt,DIRECT
 
 GEOIP,CN,DIRECT
-# RULE-SET,https://gita.cool/carrnot/shadowrocket-rules/release/direct-ip.txt,DIRECT,no-resolve
+# RULE-SET,https://gita.cool/carrnot/shadowrocket-rules/release/direct-ip.txt,DIRECT
 
 # Add this rule to save a DNS lookup
 DOMAIN-SET,https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/proxy.txt,PROXY
