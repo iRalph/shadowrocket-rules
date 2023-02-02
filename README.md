@@ -10,6 +10,8 @@ PROXY: [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/pro
 
 MMDB(CN): [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/Country.mmdb](https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/Country.mmdb)
 
+HOSTS(CN): [https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/hosts.txt](https://raw.githubusercontent.com/carrnot/shadowrocket-rules/release/hosts.txt)
+
 ## Example
 
 ```
