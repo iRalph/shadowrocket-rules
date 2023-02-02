@@ -38,6 +38,13 @@ jobs:
         run: |
           curl -L https://raw.githubusercontent.com/carrnot/china-domain-list/release/domain.txt | sed 's/^/\./' > publish/direct-name.txt
           
+      - name: build china hosts list
+        run: |
+          echo "[Host]" > hosts.txt
+          echo "" >> hosts.txt
+          curl -L https://raw.githubusercontent.com/carrnot/china-domain-list/release/domain.txt | sed 's/^/*\./' | sed -e "s|\(.*\)|\1 = system:system|" >> hosts.txt
+          mv hosts.txt publish/
+          
       - name: build ads list
         run: |
           curl -L https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/hostsVN-surge-rule.conf > publish/reject.txt
