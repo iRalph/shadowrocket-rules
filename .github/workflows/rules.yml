@@ -32,7 +32,8 @@ jobs:
           
       - name: build china ip list
         run: |
-           curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/release/ip.txt | sed 's/^/IP\-CIDR\,/' > publish/direct-ip.txt
+           curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/main/private.txt | sed 's/^/IP\-CIDR\,/' > publish/direct-ip.txt
+           curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/release/ip.txt | sed 's/^/IP\-CIDR\,/' >> publish/direct-ip.txt
            
       - name: build china domain list
         run: |
@@ -53,7 +54,8 @@ jobs:
         run: |
           wget https://github.com/carrnot/mmdb-go/releases/download/1.0/mmdb-go-linux64.tar.gz
           tar -xzvf mmdb-go-linux64.tar.gz
-          curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/release/ip.txt -o ip.txt
+          curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/main/private.txt -o ip.txt
+          curl -L https://raw.githubusercontent.com/carrnot/china-ip-list/release/ip.txt >> ip.txt
           ./mmdb-go -i ip.txt -o publish/Country.mmdb
 
       - name: Git push assets to "release" branch
