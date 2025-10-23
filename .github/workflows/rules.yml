@@ -41,8 +41,8 @@ jobs:
           
       - name: build china hosts list
         run: |
-          echo "[Host]" > hosts.txt
-          echo "" >> hosts.txt
+          echo "#!name=DNS-CN" > hosts.txt
+          echo "[Host]" >> hosts.txt
           curl -L https://raw.githubusercontent.com/carrnot/china-domain-list/release/domain.txt | sed 's/^/+\./' | sed -e "s|\(.*\)|\1 = server:tls://dot.pub|" >> hosts.txt
           mv hosts.txt publish/
           
