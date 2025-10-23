@@ -3,7 +3,7 @@ name: Build
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/360 * * * *"
+    - cron: "0 0 * * *"
   push:
     branches:
       - main
